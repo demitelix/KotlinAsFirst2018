@@ -122,12 +122,16 @@ fun triangleKind(a: Double, b: Double, c: Double): Int = TODO()
  * Если пересечения нет, вернуть -1.
  */
 fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int {
-    if ((a in c..d)&&(b in c..d)){return (b-a)}
-    if ((a in c..d)||(b in c..d)){
-        if (a>=c)return d-a
-        if (b>=c)return b-c
+    if ((a in c..d) && (b in c..d)) {
+        return (b - a)
     }
-    if ((c in a..b)&&(d in a..b)){return (d-c)}
+    if ((a in c..d) || (b in c..d)) {
+        if (a >= c) return d - a
+        if (b >= c) return b - c
+    }
+    if ((c in a..b) && (d in a..b)) {
+        return (d - c)
+    }
 
-return -1
+    return -1
 }
