@@ -82,6 +82,7 @@ class Tests {
         assertEquals(8, thirdDigit(3801))
         assertEquals(1, thirdDigit(100))
         assertEquals(0, thirdDigit(1000))
+        assertEquals(2, thirdDigit(11200))
     }
 
     @Test
@@ -104,5 +105,8 @@ class Tests {
     fun numberRevert() {
         assertEquals(874, numberRevert(478))
         assertEquals(201, numberRevert(102))
+        assertEquals(396, numberRevert(693))
+        assertEquals(444, numberRevert(444))
+        assertEquals(360, numberRevert(63))
     }
 }
