@@ -1,7 +1,10 @@
 @file:Suppress("UNUSED_PARAMETER")
+
 package lesson2.task2
 
 import lesson1.task1.sqr
+import kotlin.math.max
+import kotlin.math.min
 
 /**
  * Пример
@@ -56,4 +59,13 @@ fun circleInside(x1: Double, y1: Double, r1: Double,
  * кирпич 4 х 4 х 4 пройдёт через отверстие 4 х 4.
  * Вернуть true, если кирпич пройдёт
  */
-fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean = TODO()
+fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean {
+    val minSide = min(min(a, b), c)
+    val maxSide = max(max(a, b), c)
+
+    if (minSide <= min(r, s)) {
+        if ((a + b + c - minSide - maxSide) <= max(r, s)) return true
+    }
+
+    return false
+}
