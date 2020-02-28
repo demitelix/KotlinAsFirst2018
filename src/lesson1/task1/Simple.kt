@@ -2,6 +2,7 @@
 package lesson1.task1
 import lesson2.task1.minBiRoot
 import lesson2.task1.segmentLength
+import lesson3.task1.factorial
 import kotlin.math.*
 
 /**
@@ -51,8 +52,11 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
 fun main(args: Array<String>) {
     //val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
     //println("Root product: $x1x2")
-    val result = segmentLength(3,6,1,9)
-    println(result)
+    //val result = segmentLength(3,6,1,9)
+    //println(result)
+    for (i in 10 downTo 1 step 2) {
+        println("Number $i")
+    }
 }
 
 /**
