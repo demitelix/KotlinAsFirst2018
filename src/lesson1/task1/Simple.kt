@@ -4,7 +4,7 @@ import lesson2.task1.minBiRoot
 import lesson2.task1.segmentLength
 import lesson3.task1.factorial
 import kotlin.math.*
-
+import lesson5.task1.mergePhoneBooks
 /**
  * Пример
  *
@@ -50,13 +50,10 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main(args: Array<String>) {
-    //val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    //println("Root product: $x1x2")
-    //val result = segmentLength(3,6,1,9)
-    //println(result)
-    for (i in 10 downTo 1 step 2) {
-        println("Number $i")
-    }
+    val map1 = mapOf("Emergency" to "911", "Police" to "02")
+    val map2 = mapOf("Emergency" to "112", "Fire department" to "01")
+    val map3 = mergePhoneBooks(map1, map2)
+    println(map3)
 }
 
 /**

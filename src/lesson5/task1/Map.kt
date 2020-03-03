@@ -93,8 +93,24 @@ fun buildWordSet(text: List<String>): MutableSet<String> {
  *     mapOf("Emergency" to "112", "Police" to "02"),
  *     mapOf("Emergency" to "911", "Police" to "02")
  *   ) -> mapOf("Emergency" to "112, 911", "Police" to "02")
+ *
+ *   map1 + map2 собирает два ассоциативных массива в один,
+ *   причем пары «ключ»-«значение» из map2 вытесняют значения из map1
  */
-fun mergePhoneBooks(mapA: Map<String, String>, mapB: Map<String, String>): Map<String, String> = TODO()
+fun mergePhoneBooks(mapA: Map<String, String>, mapB: Map<String, String>): Map<String, String> {
+    val mapC = mutableMapOf<String, String>()
+    val list = mapA.keys + mapB.keys
+    //println(list)
+    for (item in list) {
+        when {
+            mapA.contains(item) && mapB.contains(item) && mapA.getValue(item) != mapB.getValue(item) -> mapC[item] = mapA.getOrDefault(item, "") + ", " + mapB.getOrDefault(item, "")
+            mapA.contains(item) -> mapC[item] = mapA.getValue(item)
+            mapB.contains(item) -> mapC[item] = mapB.getValue(item)
+        }
+    }
+    mapC.toMap()
+    return mapC
+}
 
 /**
  * Простая
