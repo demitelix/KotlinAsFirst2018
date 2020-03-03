@@ -100,7 +100,6 @@ fun buildWordSet(text: List<String>): MutableSet<String> {
 fun mergePhoneBooks(mapA: Map<String, String>, mapB: Map<String, String>): Map<String, String> {
     val mapC = mutableMapOf<String, String>()
     val list = mapA.keys + mapB.keys
-    //println(list)
     for (item in list) {
         when {
             mapA.contains(item) && mapB.contains(item) && mapA.getValue(item) != mapB.getValue(item) -> mapC[item] = mapA.getOrDefault(item, "") + ", " + mapB.getOrDefault(item, "")
